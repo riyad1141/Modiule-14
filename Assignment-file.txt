@@ -1,0 +1,59 @@
+
+original example in web.php file and democontroller.php file please check this file
+
+// Question 1
+$name = $request->input('name');
+
+
+
+// Question 2
+$userAgent = $request->header('User-Agent');
+
+
+
+// Question 3
+$page = $request->query('page', null);
+
+
+
+// Question 4
+$data = [
+    'message' => 'Success',
+    'data' => [
+        'name' => 'John Doe',
+        'age' => 25
+    ]
+];
+
+return response()->json($data);
+
+
+
+
+
+// Question 5
+    $file = $request->file('avatar');
+    $filename = $file->getClientOriginalName();
+    $file->move(public_path('uploads'), $filename);
+
+
+
+
+// Question 6
+$rememberToken = $request->cookie('remember_token', null);
+
+
+
+
+// Question 7
+
+Route::post('/submit', function (Request $request) {
+    $email = $request->input('email');
+
+    $response = [
+        'success' => true,
+        'message' => 'Form submitted successfully.'
+    ];
+
+    return response()->json($response);
+});
